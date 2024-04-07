@@ -1,0 +1,332 @@
+[
+  {
+    "book": "Génesis",
+    "aliases": ["GEN"],
+    "chapters": 50
+  },
+  {
+    "book": "Êxodo",
+    "aliases": ["EXO"],
+    "chapters": 40
+  },
+  {
+    "book": "Levítico",
+    "aliases": ["LEV"],
+    "chapters": 27
+  },
+  {
+    "book": "Números",
+    "aliases": ["NUM"],
+    "chapters": 36
+  },
+  {
+    "book": "Deuteronómio",
+    "aliases": ["DEU"],
+    "chapters": 34
+  },
+  {
+    "book": "Josué",
+    "aliases": ["JOS"],
+    "chapters": 24
+  },
+  {
+    "book": "Juízes",
+    "aliases": ["JDG"],
+    "chapters": 21
+  },
+  {
+    "book": "Rute",
+    "aliases": ["RUT"],
+    "chapters": 4
+  },
+  {
+    "book": "1 Samuel",
+    "aliases": ["1SA"],
+    "chapters": 31
+  },
+  {
+    "book": "2 Samuel",
+    "aliases": ["2SA"],
+    "chapters": 24
+  },
+  {
+    "book": "1 Reis",
+    "aliases": ["1KI"],
+    "chapters": 22
+  },
+  {
+    "book": "2 Reis",
+    "aliases": ["2KI"],
+    "chapters": 25
+  },
+  {
+    "book": "1 Crónicas",
+    "aliases": ["1CH"],
+    "chapters": 29
+  },
+  {
+    "book": "2 Crónicas",
+    "aliases": ["2CH"],
+    "chapters": 36
+  },
+  {
+    "book": "Esdras",
+    "aliases": ["EZR"],
+    "chapters": 10
+  },
+  {
+    "book": "Neemias",
+    "aliases": ["NEH"],
+    "chapters": 13
+  },
+  {
+    "book": "Ester",
+    "aliases": ["EST"],
+    "chapters": 10
+  },
+  {
+    "book": "Job",
+    "aliases": ["JOB"],
+    "chapters": 42
+  },
+  {
+    "book": "Salmos",
+    "aliases": ["PSA"],
+    "chapters": 150
+  },
+  {
+    "book": "Provérbios",
+    "aliases": ["PRO"],
+    "chapters": 31
+  },
+  {
+    "book": "Eclesiastes",
+    "aliases": ["ECC"],
+    "chapters": 12
+  },
+  {
+    "book": "Cantares de Salomão",
+    "aliases": ["SNG"],
+    "chapters": 8
+  },
+  {
+    "book": "Isaías",
+    "aliases": ["ISA"],
+    "chapters": 66
+  },
+  {
+    "book": "Jeremias",
+    "aliases": ["JER"],
+    "chapters": 52
+  },
+  {
+    "book": "Lamentações",
+    "aliases": ["LAM"],
+    "chapters": 5
+  },
+  {
+    "book": "Ezequiel",
+    "aliases": ["EZK"],
+    "chapters": 48
+  },
+  {
+    "book": "Daniel",
+    "aliases": ["DAN"],
+    "chapters": 12
+  },
+  {
+    "book": "Oséias",
+    "aliases": ["HOS"],
+    "chapters": 14
+  },
+  {
+    "book": "Joel",
+    "aliases": ["JOL"],
+    "chapters": 3
+  },
+  {
+    "book": "Amós",
+    "aliases": ["AMO"],
+    "chapters": 9
+  },
+  {
+    "book": "Obadias",
+    "aliases": ["OBA"],
+    "chapters": 1
+  },
+  {
+    "book": "Jonas",
+    "aliases": ["JON"],
+    "chapters": 4
+  },
+  {
+    "book": "Miqueias",
+    "aliases": ["MIC"],
+    "chapters": 7
+  },
+  {
+    "book": "Naum",
+    "aliases": ["NAM"],
+    "chapters": 3
+  },
+  {
+    "book": "Habacuque",
+    "aliases": ["HAB"],
+    "chapters": 3
+  },
+  {
+    "book": "Sofonias",
+    "aliases": ["ZEP"],
+    "chapters": 3
+  },
+  {
+    "book": "Ageu",
+    "aliases": ["HAG"],
+    "chapters": 2
+  },
+  {
+    "book": "Zacarias",
+    "aliases": ["ZEC"],
+    "chapters": 14
+  },
+  {
+    "book": "Malaquias",
+    "aliases": ["MAL"],
+    "chapters": 4
+  },
+  {
+    "book": "Mateus",
+    "aliases": ["MAT"],
+    "chapters": 28
+  },
+  {
+    "book": "Marcos",
+    "aliases": ["MRK"],
+    "chapters": 16
+  },
+  {
+    "book": "Lucas",
+    "aliases": ["LUK"],
+    "chapters": 24
+  },
+  {
+    "book": "João",
+    "aliases": ["JHN"],
+    "chapters": 21
+  },
+  {
+    "book": "Atos",
+    "aliases": ["ACT"],
+    "chapters": 28
+  },
+  {
+    "book": "Romanos",
+    "aliases": ["ROM"],
+    "chapters": 16
+  },
+  {
+    "book": "1 Coríntios",
+    "aliases": ["1CO"],
+    "chapters": 16
+  },
+  {
+    "book": "2 Coríntios",
+    "aliases": ["2CO"],
+    "chapters": 13
+  },
+  {
+    "book": "Gálatas",
+    "aliases": ["GAL"],
+    "chapters": 6
+  },
+  {
+    "book": "Efésios",
+    "aliases": ["EPH"],
+    "chapters": 6
+  },
+  {
+    "book": "Filipenses",
+    "aliases": ["PHP"],
+    "chapters": 4
+  },
+  {
+    "book": "Colossenses",
+    "aliases": ["COL"],
+    "chapters": 4
+  },
+  {
+    "book": "1 Tessalonicenses",
+    "aliases": ["1TH"],
+    "chapters": 5
+  },
+  {
+    "book": "2 Tessalonicenses",
+    "aliases": ["2TH"],
+    "chapters": 3
+  },
+  {
+    "book": "1 Timóteo",
+    "aliases": ["1TI"],
+    "chapters": 6
+  },
+  {
+    "book": "2 Timóteo",
+    "aliases": ["2TI"],
+    "chapters": 4
+  },
+  {
+    "book": "Tito",
+    "aliases": ["TIT"],
+    "chapters": 3
+  },
+  {
+    "book": "Filémon",
+    "aliases": ["PHM"],
+    "chapters": 1
+  },
+  {
+    "book": "Hebreus",
+    "aliases": ["HEB"],
+    "chapters": 13
+  },
+  {
+    "book": "Tiago",
+    "aliases": ["JAS"],
+    "chapters": 5
+  },
+  {
+    "book": "1 Pedro",
+    "aliases": ["1PE"],
+    "chapters": 5
+  },
+  {
+    "book": "2 Pedro",
+    "aliases": ["2PE"],
+    "chapters": 3
+  },
+  {
+    "book": "1 João",
+    "aliases": ["1JN"],
+    "chapters": 4
+  },
+  {
+    "book": "2 João",
+    "aliases": ["2JN"],
+    "chapters": 1
+  },
+  {
+    "book": "3 João",
+    "aliases": ["3JN"],
+    "chapters": 1
+  },
+  {
+    "book": "Judas",
+    "aliases": ["JUD"],
+    "chapters": 1
+  },
+  {
+    "book": "Apocalipse",
+    "aliases": ["REV"],
+    "chapters": 22
+  }
+]
