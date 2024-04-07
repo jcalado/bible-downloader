@@ -1,9 +1,11 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import json
 import re
 import requests
 import argparse
+from bs4 import BeautifulSoup
 
 parser = argparse.ArgumentParser(description='Download bible.com texts and generate JSONs.')
 parser.add_argument('book_code', metavar='Book Code', type=int,
@@ -14,8 +16,7 @@ chrome_options = Options()
 chrome_options.add_argument("--incognito")
 chrome_options.add_argument("--window-size=1280x720")
 
-driver = webdriver.Chrome(chrome_options=chrome_options,
-executable_path="chromedriver.exe")
+driver = webdriver.Chrome(options=chrome_options)
 
 books = ["GEN", "EXO", "LEV", "NUM", "DEU", "JOS", "JDG", "RUT", "1SA", "2SA",
 "1KI", "2KI", "1CH", "2CH", "EZR", "NEH", "EST", "JOB", "PSA", "PRO", "ECC",
@@ -29,7 +30,7 @@ book_code = args.book_code
 
 books_url = f"https://www.bible.com/json/bible/books/{book_code}"
 driver.get(books_url)
-books_el = driver.find_element_by_tag_name('pre')
+books_el = driver.find_element(By.TAG_NAME, 'pre')
 
 
 books_json = json.loads(books_el.text)
@@ -38,9 +39,11 @@ for book in books_json["items"]:
     print(book)
 
     chapters_url = f"https://www.bible.com/json/bible/books/{book_code}/{book['usfm']}/chapters"
+    driver.close()
+    driver = webdriver.Chrome(options=chrome_options)
     driver.get(chapters_url)
 
-    chapters_el = driver.find_element_by_tag_name('pre')
+    chapters_el = driver.find_element(By.TAG_NAME, 'pre')
     #print(chapters.text)
 
     y = json.loads(chapters_el.text)
@@ -51,20 +54,43 @@ for book in books_json["items"]:
     book_chapters = []
 
     for chapter in chapters:
-        url = f"https://www.bible.com/bible/{book_code}/{book['usfm']}.{chapter}.ARC"
+        # https://events.bible.com/api/bible/chapter/3.1?id={book_code}&reference=GEN.1
+        url = f"https://events.bible.com/api/bible/chapter/3.1?id={book_code}&reference={book['usfm']}.{chapter}"
         driver.get(url)
 
-        els = driver.find_elements_by_class_name('verse')
+        x = driver.find_element(By.CSS_SELECTOR, 'pre').text
+        chapter_text = json.loads(x)
+        html_content = chapter_text["content"]
+
+
+
+        soup = BeautifulSoup(html_content, 'html.parser')
         
+        # Find elements following this CSS selector: .verse > span.content
+        els = soup.select('.verse')
+
+        verse = 1
         verses = []
+
         for el in els:
-            match = re.match(r"([0-9]+)(\D*)", el.text, re.I)
-            if match:
-                items = match.groups()
+            
+            # Search element for .content selectors
+            content = el.select('.content')
+
+            # Join all the text from all the elements
+            content = ''.join([c.text for c in content]).strip()
+            
+            if content == '':
+                continue
+            else:
+                print(verse)
+                print(content)
+
                 verses.append({
-                    "number": items[0],
-                    "text": items[1]
+                    "number": verse,
+                    "text": content
                 })
+                verse += 1
 
         book_chapters.append({ "number": chapter, "verses": verses })
     
