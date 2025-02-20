@@ -18,11 +18,21 @@ if args.source == 'bible.com':
     except ValueError:
         parser.error("book_code must be an integer for bible.com")
 else:
-    book_code = args.book_code  # biblia.pt uses string codes like "BPT"
+    book_code = args.book_code  # biblia.pt uses string codes
 
-# Load book metadata
-with open('books.json', 'r') as file:
-    books = json.load(file)
+# Fetch book metadata for bible.com
+if args.source == 'bible.com':
+    url = f"https://www.bible.com/api/bible/version/{book_code}"
+    # print("Book URL:", url)
+    response = requests.get(url)
+    if response.status_code != 200:
+        raise Exception(f"Failed to fetch book metadata: {response.text}")
+    
+    version_data = response.json()
+    books = version_data["books"]
+else:
+    with open('books.json', 'r') as file:
+        books = json.load(file)
 
 # Function to fetch and parse a chapter
 def fetch_chapter(source, book_code, book_alias, chapter):
@@ -30,6 +40,7 @@ def fetch_chapter(source, book_code, book_alias, chapter):
     try:
         if source == 'bible.com':
             url = f"https://events.bible.com/api/bible/chapter/3.1?id={book_code}&reference={book_alias}.{chapter}"
+            #print(f"Fetching {book_code} {chapter} from {url}")
             response = requests.get(url)
             html_content = response.json()["content"]
             soup = BeautifulSoup(html_content, 'html.parser')
@@ -43,6 +54,7 @@ def fetch_chapter(source, book_code, book_alias, chapter):
         
         elif source == 'biblia.pt':
             url = f"https://www.biblia.pt/biblia/{book_code}/{book_alias}.{chapter}"
+            #print(f"Fetching {book_alias} {chapter} from {url}")
             response = requests.get(url)
             soup = BeautifulSoup(response.text, 'html.parser')
             
@@ -62,20 +74,26 @@ def fetch_chapter(source, book_code, book_alias, chapter):
                             verses[verse_num] = verse_text
                     except ValueError:
                         continue
-            
+        
     except Exception as e:
         print(f"\nError fetching {book_alias} {chapter}: {str(e)}")
         return None
     
     return {"number": chapter, "verses": [{"number": num, "text": text} for num, text in sorted(verses.items())]}
 
-
 # Main processing
 data = []
 for book in books:
-    book_alias = book['aliases'][0]
-    chapters = range(1, book['chapters'] + 1)
-    bar = IncrementalBar(f"Processing {book['book']}", max=book['chapters'])
+    if args.source == 'bible.com':
+        book_alias = book['usfm'].upper()  # Use USFM and convert to uppercase
+        book_name = book['human']  # Use human-readable name for JSON filename
+    else:
+        book_alias = book['aliases'][0]
+        book_name = book['book']
+    
+    chapters = range(1, len(book['chapters']) + 1) if args.source == 'bible.com' else range(1, book['chapters'] + 1)
+    
+    bar = IncrementalBar(f"Processing {book_name}", max=len(chapters))
     book_chapters = []
 
     # Parallel chapter fetching
@@ -94,10 +112,13 @@ for book in books:
     bar.finish()
     data.append({
         "book": book_alias,
-        "name": book['book'],
+        "name": book_name,
         "chapters": sorted(book_chapters, key=lambda c: c['number'])
     })
 
 # Save output
-with open(f'{book_code}.json', 'w', encoding='utf-8') as outfile:
+output_filename = f"{book_name}.json"
+with open(output_filename, 'w', encoding='utf-8') as outfile:
     json.dump(data, outfile, ensure_ascii=False, indent=2)
+
+print(f"Saved output to {output_filename}")
