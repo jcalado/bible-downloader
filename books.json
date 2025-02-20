@@ -1,36 +1,36 @@
 [
   {
-    "book": "GÈnesis",
+    "book": "G√©nesis",
     "aliases": ["GEN"],
     "chapters": 50
   },
   {
-    "book": " xodo",
+    "book": "√äxodo",
     "aliases": ["EXO"],
     "chapters": 40
   },
   {
-    "book": "LevÌtico",
+    "book": "Lev√≠tico",
     "aliases": ["LEV"],
     "chapters": 27
   },
   {
-    "book": "N˙meros",
+    "book": "N√∫meros",
     "aliases": ["NUM"],
     "chapters": 36
   },
   {
-    "book": "DeuteronÛmio",
+    "book": "Deuteron√≥mio",
     "aliases": ["DEU"],
     "chapters": 34
   },
   {
-    "book": "JosuÈ",
+    "book": "Josu√©",
     "aliases": ["JOS"],
     "chapters": 24
   },
   {
-    "book": "JuÌzes",
+    "book": "Ju√≠zes",
     "aliases": ["JDG"],
     "chapters": 21
   },
@@ -60,12 +60,12 @@
     "chapters": 25
   },
   {
-    "book": "1 CrÛnicas",
+    "book": "1 Cr√≥nicas",
     "aliases": ["1CH"],
     "chapters": 29
   },
   {
-    "book": "2 CrÛnicas",
+    "book": "2 Cr√≥nicas",
     "aliases": ["2CH"],
     "chapters": 36
   },
@@ -95,7 +95,7 @@
     "chapters": 150
   },
   {
-    "book": "ProvÈrbios",
+    "book": "Prov√©rbios",
     "aliases": ["PRO"],
     "chapters": 31
   },
@@ -105,12 +105,12 @@
     "chapters": 12
   },
   {
-    "book": "Cantares de Salom„o",
+    "book": "Cantares de Salom√£o",
     "aliases": ["SNG"],
     "chapters": 8
   },
   {
-    "book": "IsaÌas",
+    "book": "Isa√≠as",
     "aliases": ["ISA"],
     "chapters": 66
   },
@@ -120,7 +120,7 @@
     "chapters": 52
   },
   {
-    "book": "LamentaÁıes",
+    "book": "Lamenta√ß√µes",
     "aliases": ["LAM"],
     "chapters": 5
   },
@@ -135,7 +135,7 @@
     "chapters": 12
   },
   {
-    "book": "OsÈias",
+    "book": "Os√©ias",
     "aliases": ["HOS"],
     "chapters": 14
   },
@@ -145,7 +145,7 @@
     "chapters": 3
   },
   {
-    "book": "AmÛs",
+    "book": "Am√≥s",
     "aliases": ["AMO"],
     "chapters": 9
   },
@@ -210,7 +210,7 @@
     "chapters": 24
   },
   {
-    "book": "Jo„o",
+    "book": "Jo√£o",
     "aliases": ["JHN"],
     "chapters": 21
   },
@@ -225,22 +225,22 @@
     "chapters": 16
   },
   {
-    "book": "1 CorÌntios",
+    "book": "1 Cor√≠ntios",
     "aliases": ["1CO"],
     "chapters": 16
   },
   {
-    "book": "2 CorÌntios",
+    "book": "2 Cor√≠ntios",
     "aliases": ["2CO"],
     "chapters": 13
   },
   {
-    "book": "G·latas",
+    "book": "G√°latas",
     "aliases": ["GAL"],
     "chapters": 6
   },
   {
-    "book": "EfÈsios",
+    "book": "Ef√©sios",
     "aliases": ["EPH"],
     "chapters": 6
   },
@@ -265,12 +265,12 @@
     "chapters": 3
   },
   {
-    "book": "1 TimÛteo",
+    "book": "1 Tim√≥teo",
     "aliases": ["1TI"],
     "chapters": 6
   },
   {
-    "book": "2 TimÛteo",
+    "book": "2 Tim√≥teo",
     "aliases": ["2TI"],
     "chapters": 4
   },
@@ -280,7 +280,7 @@
     "chapters": 3
   },
   {
-    "book": "FilÈmon",
+    "book": "Fil√©mon",
     "aliases": ["PHM"],
     "chapters": 1
   },
@@ -305,17 +305,17 @@
     "chapters": 3
   },
   {
-    "book": "1 Jo„o",
+    "book": "1 Jo√£o",
     "aliases": ["1JN"],
     "chapters": 4
   },
   {
-    "book": "2 Jo„o",
+    "book": "2 Jo√£o",
     "aliases": ["2JN"],
     "chapters": 1
   },
   {
-    "book": "3 Jo„o",
+    "book": "3 Jo√£o",
     "aliases": ["3JN"],
     "chapters": 1
   },
