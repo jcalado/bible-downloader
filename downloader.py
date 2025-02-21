@@ -30,9 +30,11 @@ if args.source == 'bible.com':
     
     version_data = response.json()
     books = version_data["books"]
+    output_filename = f"{version_data['local_abbreviation']}.json"
 else:
     with open('books.json', 'r') as file:
         books = json.load(file)
+    output_filename = f"{args.book_code}.json"
 
 # Function to fetch and parse a chapter
 def fetch_chapter(source, book_code, book_alias, chapter):
@@ -91,7 +93,7 @@ for book in books:
         book_alias = book['aliases'][0]
         book_name = book['book']
     
-    chapters = range(1, len(book['chapters']) + 1) if args.source == 'bible.com' else range(1, book['chapters'] + 1)
+    chapters = range(1, len(book['chapters'])+1) if args.source == 'bible.com' else range(1, book['chapters'] + 1)
     
     bar = IncrementalBar(f"Processing {book_name}", max=len(chapters))
     book_chapters = []
@@ -117,7 +119,7 @@ for book in books:
     })
 
 # Save output
-output_filename = f"{book_name}.json"
+
 with open(output_filename, 'w', encoding='utf-8') as outfile:
     json.dump(data, outfile, ensure_ascii=False, indent=2)
 
